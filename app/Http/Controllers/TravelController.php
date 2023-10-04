@@ -87,9 +87,9 @@ class TravelController extends Controller
                 }
 
                 $invalidRows = array_filter($invalidRows, function ($invalidrow) {
-                    return $invalidrow['origen'] !== null || $invalidrow['destino'] !== null || $invalidrow['cantidad_de_asientos'] !== null  || $invalidrow['tarifa_base'] !== null
+                    return $invalidrow['origen'] !== null || $invalidrow['destino'] !== null || $invalidrow['cantidad_de_asientos'] !== null  || $invalidrow['tarifa_base'] !== null;
+                    
                 });
-
                 session()->put('validRows', $validRows);
                 session()->put('invalidRows', $invalidRows);
                 session()->put('duplicatedRows', $duplicatedRows);
