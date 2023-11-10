@@ -15,14 +15,13 @@ use Illuminate\Http\Request;
 use App\Imports\TravelsImport;
 use Maatwebsite\Excel\Facades\Excel;
 
-
 >>>>>>> 1344912003c08a7dfcd20de5619ccd4b8bb13019
 
 class TravelController extends Controller
 {
 
 <<<<<<< HEAD
-    
+
 
         public function indexAddTravels()
         {
@@ -42,7 +41,7 @@ class TravelController extends Controller
                 'duplicateRows' => session('duplicateRows')
             ]);
         }
-        
+
         public function indexTravels()
         {
             return view('admin.travel.index', [
@@ -70,7 +69,7 @@ class TravelController extends Controller
                 $invalidRows = $import->getInvalidRows();
                 $duplicatedRows = $import->getDuplicatedRows();
 
-                
+
 
                 foreach($validRows as $row){
                     $origin = $row['origen'];
@@ -81,7 +80,7 @@ class TravelController extends Controller
                         ->first();
 
                     if($travel) {
-                        
+
                         $travel->update([
                             'seat_quantity' => $row['cantidad_de_asientos'],
                             'base_rate' => $row['tarifa_base'],
@@ -99,7 +98,7 @@ class TravelController extends Controller
 
                 $invalidRows = array_filter($invalidRows, function ($invalidrow) {
                     return $invalidrow['origen'] !== null || $invalidrow['destino'] !== null || $invalidrow['cantidad_de_asientos'] !== null  || $invalidrow['tarifa_base'] !== null;
-                    
+
                 });
                 session()->put('validRows', $validRows);
                 session()->put('invalidRows', $invalidRows);
@@ -108,7 +107,7 @@ class TravelController extends Controller
                 return redirect()->route('travelsAdd.index');
             }
         }
-    
+
     /**
      * Display a listing of the resource.
      */
@@ -198,7 +197,7 @@ class TravelController extends Controller
 
         $mesagges = makeMessages();
 
-        $this->validate($request,['document'=> ['required','max:5120','mimes:xlsx','filled']],$mesagges);
+        $this->validate($request,['document'=> ['required','max:5120','mimes:xlsx']],$mesagges);
 
         if($request->hasFile('document')){
             $file = request()->file('document');
@@ -256,5 +255,3 @@ class TravelController extends Controller
         ]);
     }
 }
-
->>>>>>> 1344912003c08a7dfcd20de5619ccd4b8bb13019

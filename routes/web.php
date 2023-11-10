@@ -4,6 +4,7 @@ use App\Http\Controllers\TravelController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\ReserveController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +49,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/add/travel',[TravelController::class,'indexAddTravels'])->name('travels.index');
     Route::post('/addtravel',[TravelController::class,'travelCheck'])->name('travel.check');
     Route::get('/result/travels',[TravelController::class,'indexTravels'])->name('travelsAdd.index');
+    Route::get('/search/Reserve',[App\Http\Controllers\ReserveController::class,'index'])->name('searchReserve.index');
+    Route::get('/searchReserve',[ReserveController::class,'check'])->name('searchCheck');
 
 >>>>>>> 1344912003c08a7dfcd20de5619ccd4b8bb13019
 });

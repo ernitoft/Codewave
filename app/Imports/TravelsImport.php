@@ -103,7 +103,8 @@ class TravelsImport implements ToCollection, WithHeadingRow
                     continue;
                 }
 
-                if(isset($row['origen']) && isset($row['destino']) && isset($row['cantidad_de_asientos']) && isset($row['tarifa_base']) && is_numeric($row['cantidad_de_asientos']) && is_numeric($row['tarifa_base'])){
+                if(isset($row['origen']) && isset($row['destino']) && isset($row['cantidad_de_asientos']) && isset($row['tarifa_base']) && is_numeric($row['cantidad_de_asientos']) && is_numeric($row['tarifa_base'])
+                && $row['cantidad_de_asientos'] >= 1 && $row['tarifa_base'] >= 1){
 
                     $this->validRows[] = $row;
 

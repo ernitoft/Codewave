@@ -20,7 +20,7 @@
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
                     <h2 class="mb-4 text-4xl tracking-tight font-extrabold">Inicio de Sesión</h2>
 
-                    <form class="mt-4" action= "{{ route('login') }}"method="post">
+                    <form class="mt-4" action= "{{ route('login') }}" method="post">
                         @csrf
                         <div class="input-group mt-4">
                             <div class="input-group-append">

@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class bookings extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['id',
+    'precioTotal','codigoTramo',
+    'cantidadAsientos','diaReserva',
+    'fechaCompra'
+    ];
 }
