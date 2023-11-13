@@ -45,4 +45,30 @@ class TicketController extends Controller
             'id' => $ticket->id,
         ]);
     }
+
+    public function searchCheck(Request $request)
+    {
+
+        $this->validate($request, [
+            'search_code' => 'required|exists:tickets,code',
+        ], [
+            'search_code.required' => 'El campo de código de reserva es requerido.',
+            'search_code.exists' => 'El código de reserva no se encuentra en nuestra base de datos.',
+        ]);
+
+
+        $code = $request->input('search_code');
+        $ticket = Ticket::where('code', $code)->first();
+
+        if ($ticket) {
+            $date = date('d-m-Y', strtotime($ticket->date));
+            return view('comprobante', compact('ticket', 'date'));
+        } else {
+            return redirect()->back()->withErrors(['El código de reserva no se encontró. Por favor, verifica el código e inténtalo nuevamente.']);
+        }
+
+    }
 }
+
+
+

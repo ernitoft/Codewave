@@ -20,4 +20,6 @@ class usuarioTableSeeder extends Seeder
             'tipoUsuario' => 2,
         ]);
     }
+
+
 }

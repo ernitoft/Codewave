@@ -26,7 +26,7 @@
 </div>
 @if (count($errors) > 0)
 <div class="flex justify-center">
-    <div class="alert alert-danger py-96 mt-4 w-72 h-7" style="background-color: #ff8a80; color:white">
+    <div class="alert alert-danger py-96 mt-4 w-72 h-7" style="background-color: #FF6B6B; color:white">
         <ul>
             @foreach ($errors->all() as $message)
                 <li>{{ $message }}</li>

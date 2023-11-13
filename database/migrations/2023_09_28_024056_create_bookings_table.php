@@ -18,7 +18,12 @@ return new class extends Migration
             $table->integer('cantidadAsientos');
             $table->date('diaReserva');
             $table->date('fechaCompra');
+            $table->string('code')->unique();
+            $table->integer('seat');
+            $table->date('date');
+            $table->integer('total');
             $table->timestamps();
+
         });
     }
 

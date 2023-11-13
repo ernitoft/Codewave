@@ -18,22 +18,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-<<<<<<< HEAD
-    return view('home');
-})->name('home');
-Route::get('login', function () {
-    return view('auth.login');
-})->name('login');
-
-Route::post('login', [AuthController::class, 'login'])->name('auth.login');
-Route::post('logout', [AuthController::class, 'logout'])->name('logout');
-
-Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', [UserController::class, 'dashboardIndex'])->name('dashboard');
-    Route::get('/add/travel', [TravelController::class, 'indexAddTravels'])->name('travels.index');
-    Route::post('/addtravel', [TravelController::class, 'travelCheck'])->name('travel.check');
-    Route::get('/result/travels', [TravelController::class, 'indexTravels'])->name('travelsAdd.index');
-=======
     return view('welcome');
 })->name('welcome');
 
@@ -52,5 +36,4 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/search/Reserve',[App\Http\Controllers\ReserveController::class,'index'])->name('searchReserve.index');
     Route::get('/searchReserve',[ReserveController::class,'check'])->name('searchCheck');
 
->>>>>>> 1344912003c08a7dfcd20de5619ccd4b8bb13019
 });
