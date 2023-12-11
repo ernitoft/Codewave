@@ -117,7 +117,7 @@
                                                 {{ date('d/m/Y', strtotime($ticket->date)) }}
                                             </td>
                                             <td class="px-6 py-4">
-                                                {{ date('d/m/Y h:i:s', strtotime($ticket->created_at)) }}
+                                                {{ date('d/m/Y', strtotime($ticket->created_at)) }}
                                             </td>
 
                                             <td class="px-6 py-4">

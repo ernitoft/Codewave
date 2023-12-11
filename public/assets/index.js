@@ -159,7 +159,8 @@ button.addEventListener('click', (e) => {
     const datePicker = document.getElementById('date').value;
     const selectedSeat = document.getElementById('seat').value;
     const fecha = new Date(datePicker);
-    const dateFormatted = fecha.toLocaleDateString('es-ES', datePicker)
+    fecha.setMinutes(fecha.getMinutes() + fecha.getTimezoneOffset());
+    const dateFormatted = fecha.toLocaleDateString('es-MX', {year: 'numeric', month: '2-digit', day: '2-digit'});
     const baseRate = document.getElementById('base-rate').value;
 
     e.preventDefault();
@@ -178,7 +179,7 @@ button.addEventListener('click', (e) => {
         Swal.fire({
             title: "¿Desea continuar?",
             text: "El total de la reserva entre " + selectedOrigin + " y " + selectedDestination +
-                " para el día " + datePicker + " es de " + "$" + (baseRate * selectedSeat) +
+                " para el día " + dateFormatted + " es de " + "$" + (baseRate * selectedSeat) +
                 ` (${selectedSeat} Asientos)`,
             icon: "warning",
             showCancelButton: true,

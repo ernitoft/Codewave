@@ -83,7 +83,7 @@
                                     Fecha de la compra
                                 </th>
                                 <td class="px-6 py-4">
-                                    {{  date('d/m/Y h:i:s', strtotime($voucher->created_at)) }}
+                                    {{  date('d/m/Y', strtotime($voucher->created_at)) }}
                                 </td>
                             </tr>
 
