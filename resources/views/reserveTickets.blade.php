@@ -27,24 +27,53 @@
                                 @csrf
                                 <div class="flex flex-col items-start m-2">
 
-
+                                    <div id="tooltipOrigen" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-1 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                        Listado de ciudades de salida disponibles en este momento.
+                                    </div>
                                     <!-- ORIGIN-->
-                                    <label class="m-4 " for="origins">Origen</label>
+                                    <div class = "flex  justify-center items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-tooltip-target="tooltipOrigen">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <line x1="12" y1="16" x2="12" y2="12" />
+                                            <line x1="12" y1="8" x2="12" y2="8" />
+                                        </svg>
+                                        <label class="m-4 " for="origins">Origen</label>
+                                    </div>
                                     <select id="origins" name="origins"
                                         class="mx-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
                                         <option selected >Elige una opción</option>
-
                                     </select>
 
                                     <!-- DESTINATION-->
-                                    <label class="m-4" for="destinations">Destino</label>
+                                    <div id="tooltipDestino" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-1 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                        Listado de ciudades de llegada disponibles en este momento.
+                                    </div>
+                                    <div class = "flex  justify-center items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-tooltip-target="tooltipDestino">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <line x1="12" y1="16" x2="12" y2="12" />
+                                            <line x1="12" y1="8" x2="12" y2="8" />
+                                        </svg>
+                                        <label class="m-4" for="destinations">Destino</label>
+                                    </div>
                                     <select id="destinations" name="destinations"
                                         class="mx-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
                                         <option selected >Elige una opción</option>
                                     </select>
 
                                     <!-- DATEPICKER-->
-                                    <label class="m-2 mx-3" for="Fecha">Fecha del viaje</label>
+                                    <div id="tooltipDate" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-1 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                        Fecha de salida del bus, asegurese de ingresar una fecha superior a la actual.
+                                    </div>
+                                    <div class = "flex  justify-center items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-tooltip-target="tooltipDate">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <line x1="12" y1="16" x2="12" y2="12" />
+                                            <line x1="12" y1="8" x2="12" y2="8" />
+                                        </svg>
+                                        <label class="m-2 mx-3" for="Fecha">Fecha del viaje</label>
+                                    </div>
+
                                     <div class="relative max-w-sm mx-3">
                                         <div class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
                                             <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
@@ -59,7 +88,18 @@
                                     </div>
 
                                     <!-- SEATS-->
-                                    <label class="m-4" for="seats">Asientos</label>
+                                    <div id="tooltipSeats" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-1 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                        Se despliega la cantidad de asientos disponibles en el bus basado en el origen, destino y la fecha seleccionada.
+                                    </div>
+                                    <div class = "flex  justify-center items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-tooltip-target="tooltipSeats">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <line x1="12" y1="16" x2="12" y2="12" />
+                                            <line x1="12" y1="8" x2="12" y2="8" />
+                                        </svg>
+                                        <label class="m-4" for="seats">Asientos</label>
+                                    </div>
+
                                     <select id="seat" name="seat"
                                         class="mx-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
                                         <option selected >Elige una opción</option>

@@ -15,16 +15,23 @@
     </head>
 
     <body>
+        <div id="tooltipCorreo" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-1 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+            Ingresa tu dirección de correo electrónico. Por ejemplo: usuario@dominio.com
+        </div>
         <div class="container h-100 mx-auto shadow-lg" style="background-color: white">
             <div class="sm:py-16 m-4 justify-center items-center">
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
                     <h2 class="mb-4 text-4xl tracking-tight font-extrabold">Inicio de Sesión</h2>
 
+
+
                     <form class="mt-4" action= "{{ route('login') }}" method="post">
                         @csrf
                         <div class="input-group mt-4">
-                            <div class="input-group-append">
+                            <div class="input-group-append gap-2">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <div class = "flex gap-2 justify-center items-center">
                             </div>
                             <input type="text" name="correo" class="form-control input_user" value=""
                                 placeholder="Correo electrónico">
@@ -63,9 +70,10 @@
             </div>
         </div>
     </body>
-    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
+
 
 @endsection

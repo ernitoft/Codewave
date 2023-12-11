@@ -161,8 +161,14 @@
                 <form class="flex flex-col items-center w-1/2" action="{{ route('travel.check') }}" method="POST"
                     enctype="multipart/form-data">
                     @csrf
+                    <div id="tooltipIndex" role="tooltip"
+                    class="absolute z-10 invisible inline-block px-3 py-1 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                    Se debe ingresar un archivo excel, no debe sobrepasar los 5MB y asegúrese que tenga el formato correcto.
+                    </div>
+
                     <div>
-                        <input type="file" name="document">
+                        <input type="file" name="document" data-tooltip-target="tooltipIndex">
+
                         @error('document')
                             <p class="my-4 text-lg text-center px-4 py-3" style="background-color: #ff8a80">
                                 {{ $message }}</p>
